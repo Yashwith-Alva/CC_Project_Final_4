@@ -1,0 +1,35 @@
+version: '3.3'  # version of compose format
+
+services:
+  landing:
+    build: ./landing
+    ports:
+      - 8001:8000
+
+    depends_on:
+      - addition
+      - division
+      - multiplication
+      - subtraction
+      
+  addition:
+    build: ./addition
+    ports:
+      - 5051:8000
+
+  division:
+    build: ./division
+    ports:
+      - 5052:8000
+
+  multiplication:
+    build: ./multiplication
+    ports:
+      - 5053:8000
+
+  subtraction:
+    build: ./subtraction
+  ports:
+      - 5054:8000
+  
+  
